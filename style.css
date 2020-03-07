@@ -26,7 +26,7 @@ li{
     margin: auto;
 }
 .header {
-    background: url(img/line.png)repeat-x 0 bottom #a65980;
+    background: url(img/line.png) repeat-x 0 bottom #a65980;
 }
 .header__main{
     display: flex;
@@ -42,8 +42,8 @@ li{
 .header__menu-link{
     display: block;   
     color:  white;    
-    padding: 10px 15px;
-    font-size: 17px;
+    padding: 5px 8px;
+    font-size: 14px;
     margin: 0 8px;
     text-transform: uppercase;
     font-family: 'Open Sans Semibold';
@@ -62,4 +62,5 @@ li{
 .header__search-icon{
     color: white;
     cursor: pointer;
+    margin-left: 15px;
 }
