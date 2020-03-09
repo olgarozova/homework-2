@@ -197,3 +197,35 @@ li{
 .footer__copyright{
     font-size: 12px;
 }
+.page__banners{
+    text-align: center;
+  /*  position: relative;*/
+}
+.page__banners-img{
+    width: 100%;
+    /*position: absolute; 
+    left: 50%;
+    margin-left: -50%;*/
+}
+.page__banners-content{
+    width: 470px;
+ /*   position: absolute;        
+    left: 50%;
+    margin-left:-235px;*/
+}
+.page__banners-title{
+    font-size: 50px;
+    font-family: 'Open Sans Extrabold';
+    text-transform: uppercase;
+    background: #26b9e1;
+    border-radius: 6px;
+    padding: 0px 10px;
+    color: white;    
+}
+.page__banners-desc{
+    background: #161d25c7;
+    border-radius: 6px;
+    color: white;
+    padding: 7px 20px;
+    font-size: 16px;
+}
