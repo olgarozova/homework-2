@@ -40,12 +40,27 @@
 }
 body{
     font-family: 'Open Sans';
+    color: #777777;
+    font-size: 13px;
 }
 a{
     text-decoration: none;
 }
 i{
     font-family: 'Open Sans Italic';
+}
+h2{
+    color: #7f8c8d;
+    font-size: 30px;
+    font-family: 'Open Sans Semibold';
+    margin: 0 0 10px 0;
+}
+h1{
+    font-family: 'Open Sans Semibold';
+    font-size: 40px;
+    color: #26b9e1;
+    text-align: center;
+    text-transform: uppercase;
 }
 .open-sans-semibold-italic{
     font-family: Open Sans Semibold Italic;
@@ -101,10 +116,17 @@ li{
     border-radius: 6px;
     box-shadow: 0px 3px 0px 0 #743e59;
 }
+.blue-link,
 .header__menu-link:hover{
     background: #26b9e1;
     border-radius: 6px;
     box-shadow: 0px 3px 0px 0 #20a8da;
+}
+.blue-link{
+    padding: 15px;
+    color: white;
+    width: 18%;
+    text-align: center; 
 }
     
 .header__search-icon{
@@ -144,7 +166,7 @@ li{
     color: #532c40;
     font-family: 'Open Sans Semibold';
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     display: block;    
 }
 .footer__blog-bloc-title{    
@@ -163,7 +185,7 @@ li{
 .footer_blog-preview{
     display: flex;
     align-items: start;
-    margin-top: 20px;
+    margin-top: 22px;
 }
 .footer_blog-preview-img{
     margin-right: 20px;
@@ -186,6 +208,9 @@ li{
     font-family: 'Open Sans Extrabold';
     text-transform: uppercase;
 }
+.footer_info-block-desc{
+    margin: 25px 0;
+}
 .footer__secondary{
     background: #955073;
     padding: 10px 0;
@@ -196,6 +221,9 @@ li{
 }
 .footer__copyright{
     font-size: 12px;
+}
+.page__main{
+    padding: 15px 0;
 }
 .page__banners{
     text-align: center;
@@ -228,4 +256,22 @@ li{
     color: white;
     padding: 7px 20px;
     font-size: 16px;
+}
+.page__services-preblock{
+    background: #ececec;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.page__services-preblock-link{
+    margin-left: auto;
+}
+.page__services-preblock-link{
+    text-transform: uppercase;
+    font-family: 'Open Sans Semibold';
+    font-size: 20px;
+}
+.page__services-preblock-desc{
+    margin: 0;
 }
