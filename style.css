@@ -42,6 +42,7 @@ body{
     font-family: 'Open Sans';
     color: #777777;
     font-size: 13px;
+    background-color: #ececec;
 }
 a{
     text-decoration: none;
@@ -111,6 +112,11 @@ li{
     text-transform: uppercase;  
     font-family: 'Open Sans Semibold';  
 }
+.purple-link{
+    background: #b86b99;
+    border-radius: 6px;
+    box-shadow: 0px 3px 0px 0 #a65980;
+}
 .header__menu-link-active{
     background: #8b4a6b;
     border-radius: 6px;
@@ -122,11 +128,14 @@ li{
     border-radius: 6px;
     box-shadow: 0px 3px 0px 0 #20a8da;
 }
+.purple-link,
 .blue-link{
+    display: block;
     padding: 15px;
-    color: white;
-    width: 18%;
+    color: white;    
     text-align: center; 
+    font-family: 'Open Sans Semibold';
+    text-transform: lowercase;
 }
     
 .header__search-icon{
@@ -222,24 +231,33 @@ li{
 .footer__copyright{
     font-size: 12px;
 }
+.page_top,
 .page__main{
     padding: 15px 0;
 }
+.page__top{    
+    background: #f3f3f3;
+    padding-bottom: 50px;
+    padding-top: 25px;
+}
+.page__top-border{
+    background: url(img/footer-line.png) repeat-x 0 bottom;
+    height: 20px;
+    margin-bottom: 50px;
+}
 .page__banners{
     text-align: center;
-  /*  position: relative;*/
+    position: relative;
 }
 .page__banners-img{
     width: 100%;
-    /*position: absolute; 
-    left: 50%;
-    margin-left: -50%;*/
 }
 .page__banners-content{
     width: 470px;
- /*   position: absolute;        
+    position: absolute;        
     left: 50%;
-    margin-left:-235px;*/
+    margin-left:-235px;
+    bottom: 200px;
 }
 .page__banners-title{
     font-size: 50px;
@@ -263,15 +281,42 @@ li{
     display: flex;
     align-items: center;
     padding: 20px;
+    margin-bottom: 40px;
 }
 .page__services-preblock-link{
     margin-left: auto;
-}
-.page__services-preblock-link{
     text-transform: uppercase;
-    font-family: 'Open Sans Semibold';
     font-size: 20px;
+    width: 18%;
 }
 .page__services-preblock-desc{
     margin: 0;
+}
+.page__services{
+    display: flex;
+    justify-content: space-between;    
+}
+.page__services-item{
+    text-align: center;
+    width: 24%;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 3px 0px 0 #e5e6e6;
+    position: relative;
+    padding: 40px 15px 60px;
+}
+.page__services-title{
+    display: block;
+    font-family: 'Open Sans Extrabold';
+    font-size: 16px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    margin: 5px 0 25px 0;
+}
+.page__services-link{
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -35%;
+    width: 70%;
 }
