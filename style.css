@@ -46,6 +46,7 @@ body{
 }
 a{
     text-decoration: none;
+    color: #20a8da;
 }
 i{
     font-family: 'Open Sans Italic';
@@ -80,6 +81,7 @@ li{
 .container{
     max-width: 1170px;
     margin: auto;
+    padding: 0 15px;
 }
 .header {
     background: url(img/line.png) repeat-x 0 bottom #a65980;
@@ -319,4 +321,57 @@ li{
     left: 50%;
     margin-left: -35%;
     width: 70%;
+}
+.page__about-us-blocks{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.page__choose-us,
+.page__clients-say{
+    width: 24%;
+}
+.page__specifications{
+    width: 48%;
+}
+.page__choose-us-title,
+.page__clients-say-title{
+    color: #7f8c8c;
+    font-size: 16px;
+    font-family: 'Open Sans Extrabold';
+    margin-bottom: 35px;
+    display: block;
+    text-transform: capitalize;
+}
+.page__choose-us-list li{
+    background: url("img/arrow.png") no-repeat 0 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.page__clients-say-text{
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-style: italic;
+    line-height: 25px;
+    margin: 0;
+    position: relative;
+}
+.page__clients-say-text:after { 
+	content: ' '; 
+	position: absolute; 
+	width: 0; 
+	height: 0; 
+	left: 20px; 
+	display: block;
+    bottom: -48px; 
+	border: 24px solid; 
+    border-color:white white transparent transparent ; 
+}
+.page__clients-say-name{
+    color: #a65980;
+    font-size: 16px;
+    font-family: 'Open Sans Semibold';
+    display: block;        
+    margin: 23px 0 0 83px;
 }
