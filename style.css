@@ -48,6 +48,9 @@ a{
     text-decoration: none;
     color: #20a8da;
 }
+.header__logo{    
+    padding: 20px 10px;
+}
 i{
     font-family: 'Open Sans Italic';
 }
@@ -213,6 +216,7 @@ li{
 .modus-versus{
     font-size: 25px;    
     line-height: 25px;
+    color: white;    
 }
 .modus-versus__modus{
     font-size: 30px;
