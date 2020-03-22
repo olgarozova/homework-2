@@ -330,6 +330,7 @@ li{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 60px;
 }
 .page__choose-us,
 .page__clients-say{
@@ -337,6 +338,9 @@ li{
 }
 .page__specifications{
     width: 48%;
+}
+.page__specifications-text{
+    margin: 0;
 }
 .page__choose-us-title,
 .page__clients-say-title{
@@ -347,7 +351,7 @@ li{
     display: block;
     text-transform: capitalize;
 }
-.page__choose-us-list li{
+.page__choose-us-item{
     background: url("img/arrow.png") no-repeat 0 5px;
     padding-left: 20px;
     padding-bottom: 5px;
