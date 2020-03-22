@@ -93,20 +93,25 @@ li{
 .footer__main,
 .footer__secondary-content{
     display: flex;    
-    justify-content: space-between;
+    justify-content: space-between;   
+
 }
 .header__main,
 .footer__secondary-content{
-    align-items: center;
+    align-items: center;    
 }
 .footer__main{
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .header__nav{
     margin-left: auto;
 }
 .header__menu{
     display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
 }
 .header__menu-link{
     display: block;   
@@ -153,12 +158,9 @@ li{
     padding-top: 45px;
     color: white;
 }
-.footer__menu-wrapper{
-    width: 170px;
-}
 .footer__info-block,
 .footer__blog-block{
-    width: 370px;
+    width: 33%;
 }
 .footer__menu-item{
     background: url("img/menu-arrow.png") no-repeat 0 center;   
@@ -216,7 +218,9 @@ li{
 .modus-versus{
     font-size: 25px;    
     line-height: 25px;
-    color: white;    
+    color: white;   
+    white-space: nowrap;
+    display: block; 
 }
 .modus-versus__modus{
     font-size: 30px;
@@ -237,19 +241,15 @@ li{
 .footer__copyright{
     font-size: 12px;
 }
-.page_top,
-.page__main{
-    padding: 15px 0;
-}
 .page__top{    
     background: #f3f3f3;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     padding-top: 25px;
 }
-.page__top-border{
-    background: url(img/footer-line.png) repeat-x 0 bottom;
-    height: 20px;
-    margin-bottom: 50px;
+.page__main {
+    background: url(img/footer-line.png) repeat-x 0 0;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 .page__banners{
     text-align: center;
@@ -289,11 +289,15 @@ li{
     padding: 20px;
     margin-bottom: 40px;
 }
+.page__services-preblock-info{
+    margin-right: 15px;
+}
 .page__services-preblock-link{
     margin-left: auto;
     text-transform: uppercase;
     font-size: 20px;
-    width: 18%;
+    padding: 15px 40px;
+    white-space: nowrap;
 }
 .page__services-preblock-desc{
     margin: 0;
@@ -301,6 +305,7 @@ li{
 .page__services{
     display: flex;
     justify-content: space-between;    
+    flex-wrap: wrap;
 }
 .page__services-item{
     text-align: center;
@@ -382,4 +387,126 @@ li{
     font-family: 'Open Sans Semibold';
     display: block;        
     margin: 23px 0 0 83px;
+}
+
+/* -- MEDIA styles --*/
+
+@media (max-width: 920px) {
+    .header__menu{
+        margin: 15px 0px 5px 0;
+    }
+    .header__menu-link {
+        margin: 0 8px 10px 8px;
+    }
+    .page__banners-content{
+        bottom: 70px;
+    }   
+    .page__top-border{
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 800px) {
+    .page__top {
+        padding-bottom: 0;
+    }
+    .page__services-item{
+        width: 48%;
+        margin-bottom: 50px;
+    } 
+    .page__choose-us{
+        order: 2;
+    }
+    .page__clients-say{
+        order: 3;
+    }
+    .page__choose-us,    
+    .page__clients-say{        
+        width: 48%;
+    }
+    .page__specifications{
+        order: 1;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+ 
+    .footer__main{
+        justify-content: flex-start;
+    }
+    .footer__info-block{
+        width: 49%;
+        margin-right: 40px;
+    }
+    .footer__menu-wrapper{
+        width: 22%;
+    }
+    .footer__blog-block {
+        width: 100%;
+        margin-top: 30px;
+    }  
+}
+
+@media (max-width: 650px) {
+    .header__main, .header__menu{
+        flex-direction: column;  
+        align-items: center;      
+    }
+    .header__main{
+        padding-bottom: 20px;
+    }
+    .header__nav{
+        margin: 0;
+    }
+    .header__menu{
+        margin: 0;
+    }
+    .header__search-icon{
+        margin: 0;
+    }  
+    .page__services-preblock {
+        flex-direction: column;
+        align-items: baseline;
+    }      
+    .page__services-preblock-link{
+        margin: 15px 0 0 0;
+    }
+    .page__services-item,
+    .page__choose-us,    
+    .page__clients-say{                
+        width: 100%;        
+    }  
+    .page__specifications,
+    .page__choose-us,    
+    .page__clients-say{
+        margin-bottom: 30px;
+    }
+    .page__choose-us-title, .page__clients-say-title{
+        margin-bottom: 10px;
+    }
+    .footer__info-block{
+        width: 100%; 
+        margin: 0 0 30px 0;       
+    }
+    .footer__menu-wrapper{
+        width: 50%;
+    }
+}
+@media (max-width: 500px) {
+    .page__banners-content {
+        bottom: 15px;
+        width: 350px;
+        margin-left: -175px;
+    }
+    .page__banners-title{
+        font-size: 35px;
+    }
+}
+@media (max-width: 375px) {
+    .page__banners-content {
+        bottom: 5px;
+        width: 330px;
+        margin-left: -165px;
+    }
+    .page__banners-title{
+        font-size: 28px;
+    }
 }
