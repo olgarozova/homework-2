@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modul versus</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />    
     <link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script defer src="main.js"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="container header__main">
-            <a class="header__logo" href="#"><span class="modus-versus"><span class="modus-versus__modus">Modus</span> versus</span></a>
+            <a class="header__logo" href="#"><span class="modus-versus"><span class="modus-versus__modus">Modus</span>
+                    versus</span></a>
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__menu-item"><a class="header__menu-link header__menu-link-active"
@@ -22,9 +24,12 @@
                     <li class="header__menu-item header__menu-item-dropdown">
                         <span class="header__menu-dropdown-title" href="#">Portfolio</span>
                         <ul class="header__menu-dropdown">
-                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link" href="#">Portfolio 1</a></li>
-                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link" href="#">Portfolio 2</a></li>
-                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link" href="#">Portfolio 3 column page</a></li>
+                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link"
+                                    href="#">Portfolio 1</a></li>
+                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link"
+                                    href="#">Portfolio 2</a></li>
+                            <li class="header__menu-dropdown-item"><a class="header__menu-dropdown-link"
+                                    href="#">Portfolio 3 column page</a></li>
                         </ul>
                     </li>
                     <li class="header__menu-item"><a class="header__menu-link" href="#">Blog</a></li>
@@ -36,13 +41,26 @@
         </div>
     </header>
     <div class="page">
-        <div class="page__banners">
-            <img class="page__banners-img" src="img/banner3.jpeg" />
-            <div class="page__banners-content">
-                <span class="page__banners-title">Vestibulum</span>
-                <p class="page__banners-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe aliquid,
-                    eius consequatur nobis voluptates iure sed adipisci assumenda</p>
-            </div>
+        <div id="slider-main" class="page__banners slider">
+            <div class="slider-wrapper">
+                <div class="slider-slide">
+                    <img class="slide-img" src="img/b3.jpeg" />
+                    <div class="slide-content">
+                        <span class="slide-title">Vestibulum</span>
+                        <p class="slide-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
+                            aliquid,
+                            eius consequatur nobis voluptates iure sed adipisci assumenda</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img class="slide-img" src="img/b1.jpg" />
+                </div>
+                <div class="slider-slide">
+                    <img class="slide-img" src="img/b2.jpg" />
+                </div>                
+            </div>            
+            <span class="slider__arrow slider__arrow-left fa fa-arrow-left no-active"></span>
+            <span class="slider__arrow slider__arrow-right fa fa-arrow-right"></span>
         </div>
         <div class="page__top">
             <div class="container">
@@ -85,7 +103,7 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
         <div class="page__main">
             <div class="container">
                 <h1>Why Modus versus?</h1>
@@ -105,7 +123,8 @@
                         </ul>
                     </div>
                     <div class="page__specifications">
-                        <p class="page__specifications-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor dolorum debitis
+                        <p class="page__specifications-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Dolor dolorum debitis
                             exercitationem <a href="#">asperiores totam </a>consequuntur qui voluptatibus, tenetur sed
                             doloribus reprehenderit harum amet sapiente quidem fugiat quaerat aliquam illum eius!</p>
                     </div>
