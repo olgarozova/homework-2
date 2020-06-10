@@ -1,16 +1,17 @@
-function Slider(idSlider,isPaginator,sliderStep) {
+function Slider(idSlider,autoMove=false,isPaginator=false,sliderStep=1) {
     this.slider = document.querySelector(`#${idSlider}`);
     this.sliderElements = this.slider.querySelectorAll(".slider-slide");
 
-    this.sliderWrapper = this.slider.querySelector(".slider-wrapper");
-    this.slideWidth = 100; //width of slide in %    TODO: make computable
+    this.sliderWrapper = this.slider.querySelector(".slider-wrapper");    
+    this.slideWidth = this.sliderElements[0].offsetWidth/this.sliderWrapper.clientWidth * 100; 
 
     this.arrowLeft = this.slider.querySelector(".slider__arrow-left");
     this.arrowRight = this.slider.querySelector(".slider__arrow-right");
     
     this.step = sliderStep; 
     this.leftPosition = 0;
-    this.sliderTransform = 0;    
+    this.sliderTransform = 0;
+    this.numbSlidesPerPage = this.sliderWrapper.clientWidth/this.sliderElements[0].offsetWidth;    
     
 
     this.getDirection = function(arrow) {          
@@ -18,10 +19,10 @@ function Slider(idSlider,isPaginator,sliderStep) {
     };
 
     this.isMax = function(){       
-        return (this.step + this.leftPosition) >= this.sliderElements.length ? true : false;
+        return (this.numbSlidesPerPage + this.leftPosition) >= this.sliderElements.length ? true : false;
     };
-    this.isMin = function(){                 
-        return (this.leftPosition - this.step) < 0 ? true : false;
+    this.isMin = function(){
+        return this.leftPosition  === 0 ? true : false;
     };
     this.disableArrow = function(arrow){
         arrow.classList.add('no-active');
@@ -29,27 +30,39 @@ function Slider(idSlider,isPaginator,sliderStep) {
     this.activateArrow = function(arrow){
         arrow.classList.remove('no-active');
     };
-
+    this.calculateNextStep = function (direction) { 
+        if(direction === 'right'){
+                var nextStep = (this.sliderElements.length - this.numbSlidesPerPage) - this.leftPosition;
+                return this.leftPosition + this.step  <= this.sliderElements.length - this.numbSlidesPerPage ? this.step : nextStep;                 
+        }
+        if(direction === 'left'){            
+            var nextStep = this.leftPosition - this.step;           
+            return (nextStep < 0) ? this.leftPosition : this.step;                 
+    }
+    }
     this.move = function (event) {     
         var direction = this.getDirection(event.target);               
-        this.transformSlide(direction,this.step);        
+        this.transformSlide(direction,this.calculateNextStep(direction));        
     };
 
     this.transformSlide = function (direction,step) {            
 
         if(direction === 'right'){
             if(this.isMax()) return;
+
             this.leftPosition+=step;   
             this.sliderTransform -= step * this.slideWidth;            
             this.sliderWrapper.style.transform = `translateX(${this.sliderTransform}%)`;
+
             if(this.isMax()) this.disableArrow(this.arrowRight);
             if(!this.isMin()) this.activateArrow(this.arrowLeft);           
         }
-        if(direction === 'left'){
+        if(direction === 'left'){ 
             if(this.isMin()) return;            
             this.leftPosition-=step;
             this.sliderTransform += step * this.slideWidth;
-            this.sliderWrapper.style.transform = `translateX(${this.sliderTransform}%)`;
+            this.sliderWrapper.style.transform = `translateX(${this.sliderTransform}%)`;           
+    
             if(this.isMin())   this.disableArrow(this.arrowLeft);
             if(!this.isMax()) this.activateArrow(this.arrowRight);          
         }
@@ -58,12 +71,21 @@ function Slider(idSlider,isPaginator,sliderStep) {
             this.setPageActive(activePage);
         }        
     };
+    this.autoMove = function () {     
+       var _self = this;
+       var timerId = setInterval( function(){ 
+
+          _self.transformSlide('right',_self.calculateNextStep('right'));            
+          if(_self.isMax()) clearInterval(timerId);
+
+       },3000);                
+    };
     this.addPaginator = function(){
         var paginator = document.createElement('div');
         paginator.className = 'slider__paginator';        
 
         this.slider.appendChild(paginator); 
-        _self = this;
+        var _self = this;
         this.sliderElements.forEach( function(elem,i){
 
             var item = document.createElement('span');
@@ -102,8 +124,9 @@ function Slider(idSlider,isPaginator,sliderStep) {
     };
 
     if(isPaginator) this.addPaginator();
+    if(autoMove) this.autoMove();
     this.arrowLeft.onclick = this.move.bind(this);
     this.arrowRight.onclick = this.move.bind(this);
 }
-
-var mainSlider = new Slider('slider-main',true,1);
+new Slider('slider-main',false,true,1);
+new Slider('slider-clients',false,false,2);

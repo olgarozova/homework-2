@@ -340,6 +340,7 @@ li{
     padding-top: 30px;
     padding-bottom: 50px;
 }
+/****** SLIDER ***************************************************************/
 .slider{
     position: relative;
     overflow: hidden;
@@ -381,23 +382,20 @@ li{
     padding: 7px 20px;
     font-size: 16px;
 }
-#slider-main .slider__arrow{
-    background: #26b9e1;
-    font-size: 22px;   
+.slider .slider__arrow{
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    cursor: pointer;
-    width: 50px;
-    height: 56px;
-    color: white;
-    box-shadow: 0px 3px 0px 0 #20a8da;
+    cursor: pointer; 
+    width: 12px;
+    height: 12px;  
 }
 .slider__arrow.no-active{
     cursor: default !important;
     opacity: 0.5;
     transition: 1s opacity;
+    z-index: 10;
 }
 .slider__arrow-left:before{
     content: '\f060';    
@@ -405,15 +403,59 @@ li{
 .slider__arrow-right:before{
     content: '\f061';       
 }
-.slider__arrow-right{
-    right: 0;
+.slider__arrow-right{  
+    right: 0;  
+    top: calc(50% - 6px);        
+}
+.slider__arrow-left{        
+    top: calc(50% - 6px);             
+}
+#slider-main .slider__arrow{
+    background: #26b9e1;
+    font-size: 22px;   
+    width: 50px;
+    height: 56px;
+    color: white;
+    box-shadow: 0px 3px 0px 0 #20a8da;
+}
+#slider-main .slider__arrow-right{    
     top: calc(50% - 28px);    
     border-radius: 6px 0 0 6px;     
 }
-.slider__arrow-left{        
+#slider-main .slider__arrow-left{        
     top: calc(50% - 28px);    
     border-radius: 0 6px 6px 0;        
 }
+.page__clients{
+    margin-top: 50px;
+    border-top: 1px solid #bbb;
+    padding-top: 50px;
+    background: none;
+}
+.page__clients .slider-slide{
+    flex: 0 0 25%;
+    padding: 0 15px;
+}
+.page__clients .slider-slide img{
+    height: 150px;
+}
+.page__clients .slider-slide:last-child{
+    padding-right: 0;
+}
+.page__clients .slider-slide:first-child{
+    padding-left: 0;
+}
+.page__clients .slider__arrow{
+    color: white;
+    background: #bbb;
+    font-size: 8px;
+    border-radius: 2px;
+    top: 0;
+}
+.page__clients .slider__arrow-left{
+    right: 23px;
+}
+/*---slider paginator-----------------------------------------------------*/
 .slider__paginator{
     display: flex;
     justify-content: center;
