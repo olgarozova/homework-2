@@ -130,3 +130,4 @@ function Slider(idSlider,autoMove=false,isPaginator=false,sliderStep=1) {
 }
 new Slider('slider-main',false,true,1);
 new Slider('slider-clients',false,false,2);
+
