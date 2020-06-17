@@ -473,10 +473,17 @@ li{
     border-radius: 0 6px 6px 0;        
 }
 .page__clients{
-    margin-top: 50px;
-    border-top: 1px solid #bbb;
-    padding-top: 50px;
     background: none;
+    margin-top: -50px;
+    padding-top: 50px;
+}
+.page__clients-border{
+    border-top: 1px solid #bbb;
+    margin-left: 165px;
+    display: block;
+    position: relative;
+    top: -43px;
+    margin-right: 50px;
 }
 .page__clients .slider-slide{
     flex: 0 0 25%;
@@ -493,10 +500,11 @@ li{
 }
 .page__clients .slider__arrow{
     color: white;
-    background: #bbb;
-    font-size: 8px;
-    border-radius: 2px;
+    background: #859292;
+    font-size: 15px;
+    border-radius: 4px;
     top: 0;
+    padding: 9px;   
 }
 .page__clients .slider__arrow-left{
     right: 23px;
@@ -592,6 +600,7 @@ li{
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 60px;
+    margin-bottom: 50px;
 }
 .page__choose-us,
 .page__clients-say{
@@ -603,6 +612,7 @@ li{
 .page__specifications-text{
     margin: 0;
 }
+h2,
 .page__choose-us-title,
 .page__clients-say-title{
     color: #7f8c8c;
@@ -699,6 +709,10 @@ li{
         width: 100%;
         margin-top: 30px;
     }  
+    /*.page__clients .slider-slide {
+        flex: 0 0 33.33%;
+        padding: 0px 5px;
+    }*/
 }
 
 @media (max-width: 650px) {
@@ -745,6 +759,25 @@ li{
     .footer__menu-wrapper{
         width: 50%;
     }
+    .header__search{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #header__search-button{
+        align-self: start;
+    }
+    .header__search-input-wrapper{
+        display: block;
+        position: relative;
+        margin-top: 0;
+        right: 0;
+        margin-right: 10px;
+    }
+    .header__search-input{
+        line-height: 17px;
+    }    
+
+
 }
 @media (max-width: 500px) {
     .slide-content {
@@ -755,6 +788,16 @@ li{
     .slide-title{
         font-size: 35px;
     }
+    #slider-main .slider__arrow {        
+        font-size: 16px;
+        width: 36px;
+        height: 42px;
+        
+    }
+   /* .page__clients .slider-slide {
+        flex: 0 0 50%;
+        padding: 0px 5px;
+    }*/
 }
 @media (max-width: 375px) {
     .slide-content {
@@ -765,4 +808,8 @@ li{
     .slide-title{
         font-size: 28px;
     }
+   /* .page__clients .slider-slide {
+        flex: 0 0 100%;
+        padding: 0px;
+    }*/
 }
