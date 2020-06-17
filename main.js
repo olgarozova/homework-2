@@ -128,6 +128,26 @@ function Slider(idSlider,autoMove=false,isPaginator=false,sliderStep=1) {
     this.arrowLeft.onclick = this.move.bind(this);
     this.arrowRight.onclick = this.move.bind(this);
 }
-new Slider('slider-main',false,true,1);
-new Slider('slider-clients',false,false,2);
+function init(){
+    new Slider('slider-main',false,true,1);
+
+    
+    /*if(window.outerWidth <= 375){                             
+        new Slider('slider-clients',false,false,1);
+    }
+    else if(window.outerWidth <= 500){             
+        new Slider('slider-clients',false,false,2);
+    }
+    else if(window.outerWidth <= 800){                                                 
+        new Slider('slider-clients',false,false,3);
+    }        
+    else{
+        new Slider('slider-clients',false,false,4);
+    } */   
+    new Slider('slider-clients',false,false,2);
+}
+init();
+
+
+
 
